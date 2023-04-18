@@ -2,9 +2,10 @@ require 'rails_helper'
 
 RSpec.describe "toppings/show", type: :view do
   before(:each) do
+    dessert = Dessert.create!(name: "MyDessert")
     assign(:topping, Topping.create!(
       name: "Name",
-      dessert: nil
+      dessert: dessert
     ))
   end
 
