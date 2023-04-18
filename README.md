@@ -1,24 +1,14 @@
-# README
+# frozen-desserts
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Instructions
+Deploy this small rails app, using AWS (You can use the free tier to test this)
 
-Things you may want to cover:
+## Acceptance Criteria
+Acceptance criteria are listed in descending order of importance. Things closer to the bottom should be considered “stretch goals”. For example, you could deploy a version of this that uses sqlite and loses data when it is redeployed until you are able to persist data in a database.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+1. it should fork the repo at https://github.com/strongmind/frozen-desserts
+1. it should deploy automatically from github using github actions every time the main branch is updated
+1. it should run the specs and fail to deploy if the specs fail
+1. it should be available from the internet via http or https
+1. it should recreate AWS resources if they are destroyed
+1. it should persist data in a database
