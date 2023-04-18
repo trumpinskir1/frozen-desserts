@@ -12,7 +12,9 @@ class ToppingsController < ApplicationController
 
   # GET /toppings/new
   def new
+    p params
     @topping = Topping.new
+    @topping.dessert_id = params["dessert_id"].to_i
   end
 
   # GET /toppings/1/edit

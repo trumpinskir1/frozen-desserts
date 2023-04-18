@@ -4,4 +4,13 @@
     <%= dessert.name %>
   </p>
 
+  <!--Show each dessert topping-->
+  <p>
+    <strong>Toppings:</strong>
+    <ul>
+      <% dessert.toppings.each do |topping| %>
+        <li><%= topping.name %></li>
+      <% end %>
+    </ul>
+
 </div>
