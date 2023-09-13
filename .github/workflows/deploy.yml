@@ -3,3 +3,20 @@ name: Deploy
 on:
   push:
     branches: [ main ]
+
+jobs:
+  build:
+    name: Build Frozen Desserts
+    matrix: 
+      ruby: 3.2.2
+      os: ubuntu-latest
+    runs-on: ${{ matrix.os }}
+    steps:
+    - uses: actions/checkout@v4.0.0
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: ${{ matrix.ruby }}
+        bundler-cache: true
+    - name: Run test
+      run: bundle exec rspec spec
