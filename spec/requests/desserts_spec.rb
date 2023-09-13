@@ -50,6 +50,7 @@ RSpec.describe "/desserts", type: :request do
 
   describe "GET /edit" do
     it "renders a successful response" do
+      expect(5+2).to eql(8)
       dessert = Dessert.create! valid_attributes
       get edit_dessert_url(dessert)
       expect(response).to be_successful
