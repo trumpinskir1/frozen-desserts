@@ -7,16 +7,13 @@ on:
 jobs:
   build:
     name: Build Frozen Desserts
-    matrix: 
-      ruby: 3.2.2
-      os: ubuntu-latest
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4.0.0
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1
       with:
-        ruby-version: ${{ matrix.ruby }}
+        ruby-version: 3.2.2
         bundler-cache: true
     - name: Run test
       run: bundle exec rspec spec
